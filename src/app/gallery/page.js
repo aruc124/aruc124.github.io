@@ -1,20 +1,19 @@
 "use client";
-import React, { useEffect } from "react";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
 export default function Gallery() {
   const images = [
-    "/gallery1.jpeg",
-    "/gallery2.jpg",
-    "/gallery3.jpg",
-    "/gallery4.jpg",
-    "/gallery5.jpg",
-    "/gallery6.jpg",
-    "/gallery7.jpg",
+    "/aruc124.github.io/gallery1.jpeg",
+    "/aruc124.github.io/gallery2.jpg",
+    "/aruc124.github.io/gallery3.jpg",
+    "/aruc124.github.io/gallery4.jpg",
+    "/aruc124.github.io/gallery5.jpg",
+    "/aruc124.github.io/gallery6.jpg",
+    "/aruc124.github.io/gallery7.jpg",
   ];
 
-  const [current, setCurrent] = React.useState(0);
-  const [fade, setFade] = React.useState(true);
+  const [current, setCurrent] = useState(0);
+  const [fade, setFade] = useState(true);
 
   const goNext = () => {
     setFade(false);
@@ -32,7 +31,6 @@ export default function Gallery() {
     }, 150);
   };
 
-  // ✅ Keyboard support
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowRight") goNext();
@@ -78,24 +76,27 @@ export default function Gallery() {
             width: "100%",
             height: "80vh",
             maxHeight: "80vh",
-            position: "relative",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
             transition: "opacity 0.4s ease",
             opacity: fade ? 1 : 0,
             borderRadius: "12px",
             overflow: "hidden",
             boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
+            backgroundColor: "#000",
           }}
         >
-          <Image
-            key={images[current]}
+          <img
             src={images[current]}
             alt={`Gallery image ${current + 1}`}
-            fill
             style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
               objectFit: "contain",
               borderRadius: "12px",
+              transition: "opacity 0.3s ease",
             }}
-            sizes="(max-width: 1000px) 100vw, 1000px"
           />
         </div>
 

@@ -1,19 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-import "../globals.css";
+import "../globals.css"; // Updated relative path
 
 export default function Navbar() {
-  const pathname = usePathname();
-
   const navItems = [
-    { href: "/", label: "Welcome!" },
-    { href: "/projects", label: "Projects" },
-    { href: "/gallery", label: "Gallery" },
-    
-    
+    { href: "/aruc124.github.io/", label: "Welcome!" },
+    { href: "/aruc124.github.io/projects", label: "Projects" },
+    { href: "/aruc124.github.io/gallery", label: "Gallery" },
   ];
 
   return (
@@ -21,10 +15,7 @@ export default function Navbar() {
       <ul>
         {navItems.map(({ href, label }) => (
           <li key={href}>
-            <Link
-              href={href}
-              className={`nav-link ${pathname === href ? "active" : ""}`}
-            >
+            <Link href={href}>
               {label}
             </Link>
           </li>

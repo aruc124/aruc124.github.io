@@ -1,23 +1,23 @@
-import Image from "next/image";
-
 export default function Projects() {
   const sampleProjects = [
     {
       title: "Bharatanatyam Arangetram",
-      description: "Debut solo performance of the entire Bharatanatyam repertoire, featuring eight classical pieces that blend rhythm, expression and tradition",
-      image: "/arangetram.jpeg",
+      description:
+        "Debut solo performance of the entire Bharatanatyam repertoire, featuring eight classical pieces that blend rhythm, expression and tradition",
+      image: "/aruc124.github.io/arangetram.jpeg",
       link: "https://kulturkick.ch/projekte/bharatanatyam-arangetram",
     },
     {
       title: "Pujarini - An Adaption",
-      description: "An innovative solo choreography set to the Bengali poem Pujarini (“The Devotee”) by Nobel laureate Rabindranath Tagore (1861–1941). Presented in 2022 in Wettingen, Switzerland, in the presence of the Indian Ambassador, the performance blended Bharatanatyam, spoken word, and poetry. This unique fusion of movement, Speech and literature brought a fresh, contemporary interpretation of Tagore’s work to the stage.",
-      image: "/project1.jpg",
-      youtube: "https://youtu.be/NfFsM-i7S58", // changed for link use
+      description:
+        "An innovative solo choreography set to the Bengali poem Pujarini (“The Devotee”) by Nobel laureate Rabindranath Tagore (1861–1941). Presented in 2022 in Wettingen, Switzerland, in the presence of the Indian Ambassador, the performance blended Bharatanatyam, spoken word, and poetry. This unique fusion of movement, Speech and literature brought a fresh, contemporary interpretation of Tagore’s work to the stage.",
+      image: "/aruc124.github.io/project1.jpg",
+      youtube: "https://youtu.be/NfFsM-i7S58",
     },
     {
       title: "The Inheritance",
       description: "Work in Progress",
-      image: "/workip.png",
+      image: "/aruc124.github.io/workip.png",
     },
   ];
 
@@ -47,25 +47,18 @@ export default function Projects() {
                 justifyContent: "center",
               }}
             >
-              <div
+              <img
+                src={proj.image}
+                alt={proj.title}
                 style={{
-                  position: "relative",
+                  borderRadius: "10px",
                   width: "100%",
-                  maxWidth: "100%",
+                  maxWidth: "600px",
+                  height: "auto",
+                  objectFit: "contain",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
                 }}
-              >
-                <Image
-                  src={proj.image}
-                  alt={proj.title}
-                  layout="responsive"
-                  width={600}
-                  height={400}
-                  style={{
-                    borderRadius: "10px",
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
+              />
             </div>
 
             {/* Text + Links */}
@@ -75,7 +68,6 @@ export default function Projects() {
                   fontSize: "1.75rem",
                   marginBottom: "1rem",
                   color: "#808000",
-                  //fontStyle: "italic",
                   fontFamily: "var(--font-sora), sans-serif",
                   fontWeight: 600,
                 }}
@@ -83,7 +75,14 @@ export default function Projects() {
                 {proj.title}
               </h2>
 
-              <p style={{ fontSize: "1.05rem", lineHeight: 1.8, marginBottom: "1.2rem", textAlign: "justify" }}>
+              <p
+                style={{
+                  fontSize: "1.05rem",
+                  lineHeight: 1.8,
+                  marginBottom: "1.2rem",
+                  textAlign: "justify",
+                }}
+              >
                 {proj.description}
               </p>
 

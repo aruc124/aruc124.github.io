@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function AboutMe() {
   return (
     <main
@@ -36,7 +34,7 @@ export default function AboutMe() {
               fontSize: "2.5rem",
               fontWeight: 800,
               marginBottom: "1.5rem",
-              color: "#808000", // olive green
+              color: "#808000",
               fontFamily: "var(--font-sora), sans-serif",
               textAlign: "left",
             }}
@@ -94,11 +92,9 @@ export default function AboutMe() {
             textAlign: "center",
           }}
         >
-          <Image
-            src="/flute.jpg"
+          <img
+            src="/aruc124.github.io/flute.jpg"
             alt="Arushi dancing"
-            width={450}
-            height={600}
             style={{
               borderRadius: "12px",
               objectFit: "cover",
