@@ -1,95 +1,115 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 
-export default function Home() {
+export default function AboutMe() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "5rem 2rem",
+        minHeight: "100vh",
+        background: "linear-gradient(to right, #0a0a0a, #111111)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "4rem",
+          flexWrap: "wrap",
+          maxWidth: "1200px",
+          width: "100%",
+        }}
+      >
+        {/* Text Section */}
+        <div
+          style={{
+            flex: 1,
+            minWidth: "320px",
+            maxWidth: "550px",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "2.5rem",
+              fontWeight: 800,
+              marginBottom: "1.5rem",
+              color: "#808000", // olive green
+              fontFamily: "var(--font-sora), sans-serif",
+              textAlign: "left",
+            }}
+          >
+            Arushi Choudhury
+          </h2>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <p
+            style={{
+              fontSize: "1.2rem",
+              lineHeight: "2rem",
+              marginBottom: "1.5rem",
+              color: "#ffffff",
+              textAlign: "justify",
+            }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
+            Arushi is a passionate <em>Bharatanatyam</em> dancer from Basel, Switzerland.
+            Trained in the classical Indian dance form <em>Bharatanatyam</em> at <em>Kalasri – School for Indian Dance</em> in Basel
+            under <em>Smt. Sumitra Keshava</em>, she has been performing since childhood at festivals and events across Switzerland.
+            <br /><br />
+            Her own artistic endeavours explore the intersection of classical forms and contemporary expression.
+            Arushi creates innovative contemporary pieces that weave together intercultural themes while blending mediums such as movement, speech, and visual storytelling.
+            She is especially passionate about using dance as a powerful way to bridge cultures, connect communities, and share stories across boundaries.
+          </p>
+
+          <p
+            style={{
+              fontSize: "1.2rem",
+              color: "#ffffff",
+              fontWeight: 500,
+              fontStyle: "italic",
+              marginBottom: "0.4rem",
+            }}
           >
-            Read our docs
-          </a>
+            Contact:{" "}
+            <a
+              href="mailto:arushichoudhury85@gmail.com"
+              style={{
+                fontSize: "1.2rem",
+                color: "#a5a552",
+                textDecoration: "underline",
+              }}
+            >
+              arushichoudhury85@gmail.com
+            </a>
+          </p>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Image Section */}
+        <div
+          style={{
+            flex: 1,
+            minWidth: "320px",
+            maxWidth: "450px",
+            textAlign: "center",
+          }}
         >
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/flute.jpg"
+            alt="Arushi dancing"
+            width={450}
+            height={600}
+            style={{
+              borderRadius: "12px",
+              objectFit: "cover",
+              width: "100%",
+              maxWidth: "450px",
+              height: "600px",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+            }}
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </div>
+    </main>
   );
 }
