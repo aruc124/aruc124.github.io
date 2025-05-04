@@ -15,10 +15,10 @@ export default function Navbar() {
       className="navbar"
       style={{
         position: "absolute",
-        top: "0.65rem",           // ⬆️ Slightly higher
+        top: "0.6 rem",           // ⬆️ Slightly higher
         right: "2rem",
         padding: "1rem 2rem",  // ⬆️ Adds space around navbar
-        fontSize: "2.5rem",    // ⬆️ Larger text
+        fontSize: "2 rem",    // ⬆️ Larger text
         zIndex: 1000,
       }}
     >

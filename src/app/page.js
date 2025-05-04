@@ -15,28 +15,28 @@ export default function AboutMe() {
       <div
         style={{
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
-          gap: "4rem",
+          gap: "3rem",
           flexWrap: "wrap",
-          maxWidth: "1400px", // ⬅️ Increased from 1200
+          maxWidth: "1200px",
           width: "100%",
         }}
       >
         {/* Text Section */}
         <div
           style={{
-            flex: 1.2, // ⬅️ Slightly wider text section
+            flex: 1,
             minWidth: "320px",
-            maxWidth: "700px",
+            maxWidth: "600px",
           }}
         >
           <h2
             style={{
-              fontSize: "2.8rem",
+              fontSize: "2.5rem",
               fontWeight: 800,
               marginBottom: "1.5rem",
-              color: "#808000", // olive green
+              color: "#808000",
               fontFamily: "var(--font-sora), sans-serif",
               textAlign: "left",
             }}
@@ -46,7 +46,7 @@ export default function AboutMe() {
 
           <p
             style={{
-              fontSize: "1.5rem", // ⬅️ Slightly larger
+              fontSize: "1.2rem",
               lineHeight: "2rem",
               marginBottom: "1.5rem",
               color: "#ffffff",
@@ -54,30 +54,35 @@ export default function AboutMe() {
             }}
           >
             Arushi is a passionate <em>Bharatanatyam</em> dancer from Basel, Switzerland.
-            Trained in the classical Indian dance form <em>Bharatanatyam</em> at <em>Kalasri – School for Indian Dance</em> in Basel
-            under <em>Smt. Sumitra Keshava</em>, she has been performing since childhood at festivals and events across Switzerland.
-            <br /><br />
-            Her own artistic work explores the intersection of classical tradition and contemporary expression.
-            Arushi creates innovative contemporary pieces that weave together intercultural themes while blending mediums such as movement, speech, and visual storytelling.
-            She is especially passionate about using dance as a powerful way to bridge cultures, connect communities, and share stories across boundaries.
+            Trained in the classical Indian dance form <em>Bharatanatyam</em> at{" "}
+            <em>Kalasri – School for Indian Dance</em> in Basel under{" "}
+            <em>Smt. Sumitra Keshava</em>, she has been performing since childhood at
+            festivals and events across Switzerland.
+            <br />
+            <br />
+            Her own artistic work explores the intersection of classical tradition and
+            contemporary expression. Arushi creates innovative contemporary pieces that
+            weave together intercultural themes while blending mediums such as movement,
+            speech, and visual storytelling. She is especially passionate about using dance
+            as a powerful way to bridge cultures, connect communities, and share stories
+            across boundaries.
           </p>
 
           <p
             style={{
-              fontSize: "1.2rem",
+              fontSize: "1.1rem",
               color: "#ffffff",
-              fontWeight: 500,
               fontStyle: "italic",
               marginBottom: "0.4rem",
             }}
           >
-            Contact:{" "}
+            <strong>Contact:</strong>{" "}
             <a
               href="mailto:arushichoudhury85@gmail.com"
               style={{
-                fontSize: "1.2rem",
                 color: "#a5a552",
                 textDecoration: "underline",
+                fontStyle: "italic",
               }}
             >
               arushichoudhury85@gmail.com
@@ -89,21 +94,20 @@ export default function AboutMe() {
         <div
           style={{
             flex: 1,
-            minWidth: "320px",
-            maxWidth: "500px", // ⬅️ Slightly larger
+            minWidth: "280px",
+            maxWidth: "400px",
             textAlign: "center",
           }}
         >
           <Image
-            src="/flute-new.jpg"
+            src="/flute.jpg"
             alt="Arushi dancing"
-            width={500}
-            height={650}
+            width={400}
+            height={550}
             style={{
               borderRadius: "12px",
               objectFit: "cover",
               width: "100%",
-              maxWidth: "500px",
               height: "auto",
               boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
             }}

@@ -44,7 +44,7 @@ export default function Projects() {
             style={{
               display: "flex",
               flexDirection: index % 2 === 0 ? "row" : "row-reverse",
-              gap: "3rem",
+              gap: "2rem",
               alignItems: "center",
               flexWrap: "wrap",
               paddingBottom: "2rem",
