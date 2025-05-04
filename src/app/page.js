@@ -99,7 +99,7 @@ export default function AboutMe() {
     maxWidth: "400px",
     textAlign: "center",
     alignSelf: "flex-start", // Align the image with the top of the text
-    marginTop: "6rem",    // Optional: fine-tune to align exactly with heading
+    marginTop: "5.5rem",    // Optional: fine-tune to align exactly with heading
   }}
 >
   <Image
