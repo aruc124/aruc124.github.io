@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 
 export default function Gallery() {
@@ -15,44 +15,42 @@ export default function Gallery() {
 
   const [current, setCurrent] = React.useState(0);
 
-  const goNext = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % images.length);
-  }, [images.length]);
-
-  const goPrev = useCallback(() => {
-    setCurrent((prev) => (prev - 1 + images.length) % images.length);
-  }, [images.length]);
-
-  const handleKeyDown = useCallback(
-    (e) => {
-      if (e.key === "ArrowRight") goNext();
-      if (e.key === "ArrowLeft") goPrev();
-    },
-    [goNext, goPrev]
-  );
+  const goNext = () => setCurrent((prev) => (prev + 1) % images.length);
+  const goPrev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
+    const handleKey = (e) => {
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
 
   return (
-    <main style={{ padding: "5rem 2rem", maxWidth: "1000px", margin: "0 auto" }}>
-      
-    <h1
-  style={{
-    fontSize: "2.5rem",
-    marginTop: "6rem", // Push down
-    marginBottom: "4rem",
-    fontFamily: "var(--font-sora), sans-serif",
-    color: "#ffffff",  // Keep white
-    textAlign: "left", // Align to the left
-    width: "100%",     // Make sure it spans the row to apply left-align
-  }}
->
-  Gallery
-</h1>
-
+    <main
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "6rem 2rem 4rem",
+        minHeight: "100vh",
+        background: "linear-gradient(to right, #0a0a0a, #111111)",
+        color: "#a5a552",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "2.5rem",
+          marginBottom: "2rem",
+          fontFamily: "var(--font-sora), sans-serif",
+          color: "#ffffff",
+          alignSelf: "flex-start",
+          paddingLeft: "2rem",
+        }}
+      >
+        Gallery
+      </h1>
 
       <div
         style={{
@@ -61,7 +59,7 @@ export default function Gallery() {
           justifyContent: "center",
           position: "relative",
           width: "100%",
-          maxWidth: "800px",
+          maxWidth: "1000px",
         }}
       >
         {/* Left Arrow */}
@@ -73,15 +71,16 @@ export default function Gallery() {
             background: "none",
             border: "none",
             color: "#a5a552",
-            fontSize: "3rem",
+            fontSize: "2.5rem",
             cursor: "pointer",
             zIndex: 1,
           }}
+          aria-label="Previous image"
         >
           &#8592;
         </button>
 
-        {/* Main Image */}
+        {/* Image */}
         <div
           style={{
             flex: 1,
@@ -89,19 +88,21 @@ export default function Gallery() {
             borderRadius: "12px",
             overflow: "hidden",
             boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
+            width: "100%",
             maxHeight: "80vh",
           }}
         >
           <Image
             src={images[current]}
             alt={`Gallery image ${current + 1}`}
-            width={700}
-            height={700}
+            width={800}
+            height={600}
             style={{
-              objectFit: "contain",
               width: "100%",
               height: "auto",
+              objectFit: "contain",
               maxHeight: "80vh",
+              borderRadius: "12px",
             }}
           />
         </div>
@@ -115,51 +116,51 @@ export default function Gallery() {
             background: "none",
             border: "none",
             color: "#a5a552",
-            fontSize: "3rem",
+            fontSize: "2.5rem",
             cursor: "pointer",
             zIndex: 1,
           }}
+          aria-label="Next image"
         >
           &#8594;
         </button>
       </div>
 
-      {/* Thumbnail Strip */}
+      {/* Thumbnail Bar - centered */}
       <div
         style={{
-          marginTop: "2rem",
           display: "flex",
-          gap: "0.5rem",
-          flexWrap: "wrap",
           justifyContent: "center",
+          width: "100%",
+          marginTop: "2rem",
         }}
       >
-        {images.map((img, index) => (
-          <div
-            key={index}
-            onClick={() => setCurrent(index)}
-            style={{
-              border: current === index ? "2px solid #a5a552" : "1px solid #444",
-              borderRadius: "6px",
-              overflow: "hidden",
-              cursor: "pointer",
-              width: "70px",
-              height: "70px",
-              backgroundColor: "#1a1a1a",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+        <div
+          style={{
+            display: "flex",
+            gap: "0.5rem",
+            flexWrap: "wrap",
+            maxWidth: "600px",
+            justifyContent: "center",
+          }}
+        >
+          {images.map((src, i) => (
             <Image
-              src={img}
-              alt={`Thumb ${index + 1}`}
-              width={70}
-              height={70}
-              style={{ objectFit: "cover" }}
+              key={i}
+              src={src}
+              alt={`Thumbnail ${i + 1}`}
+              width={60}
+              height={60}
+              onClick={() => setCurrent(i)}
+              style={{
+                cursor: "pointer",
+                border: i === current ? "2px solid #a5a552" : "2px solid transparent",
+                borderRadius: "6px",
+                objectFit: "cover",
+              }}
             />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </main>
   );
