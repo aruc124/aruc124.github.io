@@ -92,7 +92,7 @@ export default function Projects() {
                     href={proj.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: "#a5a552", textDecoration: "underline", fontSize: "1.1rem", fontWeight: 500, }}
+                    style={{ color: "#a5a552", textDecoration: "underline", fontSize: "1.2rem", fontWeight: 500, }}
                   >
                     View more about this from GGG Kulturkick Basel
                   </a>
@@ -105,7 +105,7 @@ export default function Projects() {
                     href={proj.youtube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: "#a5a552", textDecoration: "underline",fontSize: "1.1rem", // 👈 Increase this too
+                    style={{ color: "#a5a552", textDecoration: "underline",fontSize: "1.2rem", // 👈 Increase this too
                       fontWeight: 500, }}
                   >
                     Watch performance video
