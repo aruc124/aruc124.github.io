@@ -91,28 +91,29 @@ export default function AboutMe() {
         </div>
 
         {/* Image Section */}
-        <div
-          style={{
-            flex: 1,
-            minWidth: "280px",
-            maxWidth: "400px",
-            textAlign: "center",
-          }}
-        >
-          <Image
-            src="/flute.jpg"
-            alt="Arushi dancing"
-            width={400}
-            height={550}
-            style={{
-              borderRadius: "12px",
-              objectFit: "cover",
-              width: "100%",
-              height: "auto",
-              boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-            }}
-          />
-        </div>
+<div
+  style={{
+    flex: 1,
+    minWidth: "280px",
+    maxWidth: "320px", // Smaller than before
+    textAlign: "center",
+  }}
+>
+  <Image
+    src="/flute-new.jpg"
+    alt="Arushi dancing"
+    width={320}
+    height={450}
+    style={{
+      borderRadius: "12px",
+      objectFit: "cover",
+      width: "100%",
+      height: "auto",
+      boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+    }}
+  />
+</div>
+
       </div>
     </main>
   );

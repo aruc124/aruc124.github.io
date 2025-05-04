@@ -14,7 +14,7 @@ export default function Projects() {
       description:
         "An innovative solo choreography set to the Bengali poem Pujarini (“The Devotee”) by Rabindranath Tagore. Presented in 2022 in Wettingen, Switzerland, this performance blended Bharatanatyam, spoken word, and poetry.",
       image: "/project1.jpg",
-      youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      youtube: "https://youtu.be/NfFsM-i7S58",
     },
     {
       title: "The Inheritance",
@@ -82,7 +82,7 @@ export default function Projects() {
                 {proj.title}
               </h2>
 
-              <p style={{ fontSize: "1.5rem", lineHeight: 1.8, marginBottom: "1rem", color: "#fff", textAlign: "justify" }}>
+              <p style={{ fontSize: "1.3rem", lineHeight: 1.8, marginBottom: "1rem", color: "#fff", textAlign: "justify" }}>
                 {proj.description}
               </p>
 
@@ -92,7 +92,7 @@ export default function Projects() {
                     href={proj.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: "#a5a552", textDecoration: "underline" }}
+                    style={{ color: "#a5a552", textDecoration: "underline", fontSize: "1.1rem", fontWeight: 500, }}
                   >
                     View more about this from GGG Kulturkick Basel
                   </a>
@@ -105,7 +105,8 @@ export default function Projects() {
                     href={proj.youtube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: "#a5a552", textDecoration: "underline" }}
+                    style={{ color: "#a5a552", textDecoration: "underline",fontSize: "1.1rem", // 👈 Increase this too
+                      fontWeight: 500, }}
                   >
                     Watch performance video
                   </a>
