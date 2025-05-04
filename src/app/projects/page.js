@@ -28,7 +28,7 @@ export default function Projects() {
       <h1
   style={{
     fontSize: "2.5rem",
-    marginTop: "6rem", // 👈 Add this line
+    marginTop: "4rem", // 👈 Add this line
     marginBottom: "4rem",
     color: "#fff",
   }}
