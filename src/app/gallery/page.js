@@ -20,7 +20,7 @@ export default function Gallery() {
 
   useEffect(() => {
     // ✅ Define keyboard event handler correctly
-    const handleKey = (e: KeyboardEvent) => {
+    const handleKey =(e) => {
       if (e.key === "ArrowRight") goNext();
       if (e.key === "ArrowLeft") goPrev();
     };
