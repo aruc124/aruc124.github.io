@@ -94,18 +94,18 @@ export default function AboutMe() {
 <div
   style={{
     flex: 1,
-    minWidth: "280px",
-    maxWidth: "320px",
+    minWidth: "320px",
+    maxWidth: "400px",
     textAlign: "center",
     alignSelf: "flex-start", // Align the image with the top of the text
-    marginTop: "8rem",    // Optional: fine-tune to align exactly with heading
+    marginTop: "7rem",    // Optional: fine-tune to align exactly with heading
   }}
 >
   <Image
     src="/flute-new.jpg"
     alt="Arushi dancing"
-    width={320}
-    height={450}
+    width={400}
+    height={560}
     style={{
       borderRadius: "12px",
       objectFit: "cover",

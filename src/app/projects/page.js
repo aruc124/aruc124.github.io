@@ -37,7 +37,7 @@ export default function Projects() {
 </h1>
 
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
         {sampleProjects.map((proj, index) => (
           <div
             key={index}

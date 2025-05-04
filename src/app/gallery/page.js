@@ -42,11 +42,12 @@ export default function Gallery() {
       <h1
         style={{
           fontSize: "2.5rem",
-          marginBottom: "2rem",
-          fontFamily: "var(--font-sora), sans-serif",
-          color: "#ffffff",
-          alignSelf: "flex-start",
-          paddingLeft: "2rem",
+    marginTop: "6rem", // match Projects
+    marginBottom: "4rem", // match Projects
+    fontFamily: "var(--font-sora), sans-serif",
+    color: "#ffffff",
+    alignSelf: "flex-start",
+    paddingLeft: "2rem",
         }}
       >
         Gallery
@@ -95,13 +96,13 @@ export default function Gallery() {
           <Image
             src={images[current]}
             alt={`Gallery image ${current + 1}`}
-            width={800}
-            height={600}
+            width={700}
+            height={500}
             style={{
               width: "100%",
               height: "auto",
               objectFit: "contain",
-              maxHeight: "80vh",
+              maxHeight: "70vh",
               borderRadius: "12px",
             }}
           />
@@ -149,8 +150,8 @@ export default function Gallery() {
               key={i}
               src={src}
               alt={`Thumbnail ${i + 1}`}
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               onClick={() => setCurrent(i)}
               style={{
                 cursor: "pointer",
