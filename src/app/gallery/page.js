@@ -1,142 +1,165 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useCallback } from "react";
+import Image from "next/image";
 
 export default function Gallery() {
   const images = [
-    "/aruc124.github.io/gallery1.jpeg",
-    "/aruc124.github.io/gallery2.jpg",
-    "/aruc124.github.io/gallery3.jpg",
-    "/aruc124.github.io/gallery4.jpg",
-    "/aruc124.github.io/gallery5.jpg",
-    "/aruc124.github.io/gallery6.jpg",
-    "/aruc124.github.io/gallery7.jpg",
+    "/gallery1.jpeg",
+    "/gallery2.jpg",
+    "/gallery3.jpg",
+    "/gallery4.jpg",
+    "/gallery5.jpg",
+    "/gallery6.jpg",
+    "/gallery7.jpg",
   ];
 
-  const [current, setCurrent] = useState(0);
-  const [fade, setFade] = useState(true);
+  const [current, setCurrent] = React.useState(0);
 
-  const goNext = () => {
-    setFade(false);
-    setTimeout(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-      setFade(true);
-    }, 150);
-  };
+  const goNext = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  }, [images.length]);
 
-  const goPrev = () => {
-    setFade(false);
-    setTimeout(() => {
-      setCurrent((prev) => (prev - 1 + images.length) % images.length);
-      setFade(true);
-    }, 150);
-  };
+  const goPrev = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  }, [images.length]);
 
-  useEffect(() => {
-    const handleKey = (e) => {
+  const handleKeyDown = useCallback(
+    (e) => {
       if (e.key === "ArrowRight") goNext();
       if (e.key === "ArrowLeft") goPrev();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, []);
+    },
+    [goNext, goPrev]
+  );
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
 
   return (
-    <main
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "4rem 2rem",
-        minHeight: "100vh",
-        background: "linear-gradient(to right, #0a0a0a, #111111)",
-        color: "#a5a552",
-        overflow: "hidden",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "2rem",
-          marginBottom: "2rem",
-          fontFamily: "var(--font-sora)",
-        }}
-      >
-        Gallery
-      </h1>
+    <main style={{ padding: "5rem 2rem", maxWidth: "1000px", margin: "0 auto" }}>
+      
+    <h1
+  style={{
+    fontSize: "2.5rem",
+    marginTop: "6rem", // Push down
+    marginBottom: "4rem",
+    fontFamily: "var(--font-sora), sans-serif",
+    color: "#ffffff",  // Keep white
+    textAlign: "left", // Align to the left
+    width: "100%",     // Make sure it spans the row to apply left-align
+  }}
+>
+  Gallery
+</h1>
+
 
       <div
         style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           position: "relative",
           width: "100%",
-          maxWidth: "1000px",
+          maxWidth: "800px",
         }}
       >
-        {/* Image container */}
-        <div
-          style={{
-            width: "100%",
-            height: "80vh",
-            maxHeight: "80vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            transition: "opacity 0.4s ease",
-            opacity: fade ? 1 : 0,
-            borderRadius: "12px",
-            overflow: "hidden",
-            boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
-            backgroundColor: "#000",
-          }}
-        >
-          <img
-            src={images[current]}
-            alt={`Gallery image ${current + 1}`}
-            style={{
-              maxWidth: "100%",
-              maxHeight: "100%",
-              objectFit: "contain",
-              borderRadius: "12px",
-              transition: "opacity 0.3s ease",
-            }}
-          />
-        </div>
-
         {/* Left Arrow */}
         <button
           onClick={goPrev}
           style={{
             position: "absolute",
-            top: "50%",
-            left: "1rem",
-            transform: "translateY(-50%)",
+            left: "-3rem",
             background: "none",
             border: "none",
             color: "#a5a552",
-            fontSize: "2.5rem",
+            fontSize: "3rem",
             cursor: "pointer",
+            zIndex: 1,
           }}
-          aria-label="Previous image"
         >
           &#8592;
         </button>
+
+        {/* Main Image */}
+        <div
+          style={{
+            flex: 1,
+            textAlign: "center",
+            borderRadius: "12px",
+            overflow: "hidden",
+            boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
+            maxHeight: "80vh",
+          }}
+        >
+          <Image
+            src={images[current]}
+            alt={`Gallery image ${current + 1}`}
+            width={700}
+            height={700}
+            style={{
+              objectFit: "contain",
+              width: "100%",
+              height: "auto",
+              maxHeight: "80vh",
+            }}
+          />
+        </div>
 
         {/* Right Arrow */}
         <button
           onClick={goNext}
           style={{
             position: "absolute",
-            top: "50%",
-            right: "1rem",
-            transform: "translateY(-50%)",
+            right: "-3rem",
             background: "none",
             border: "none",
             color: "#a5a552",
-            fontSize: "2.5rem",
+            fontSize: "3rem",
             cursor: "pointer",
+            zIndex: 1,
           }}
-          aria-label="Next image"
         >
           &#8594;
         </button>
+      </div>
+
+      {/* Thumbnail Strip */}
+      <div
+        style={{
+          marginTop: "2rem",
+          display: "flex",
+          gap: "0.5rem",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
+        {images.map((img, index) => (
+          <div
+            key={index}
+            onClick={() => setCurrent(index)}
+            style={{
+              border: current === index ? "2px solid #a5a552" : "1px solid #444",
+              borderRadius: "6px",
+              overflow: "hidden",
+              cursor: "pointer",
+              width: "70px",
+              height: "70px",
+              backgroundColor: "#1a1a1a",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              src={img}
+              alt={`Thumb ${index + 1}`}
+              width={70}
+              height={70}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        ))}
       </div>
     </main>
   );
