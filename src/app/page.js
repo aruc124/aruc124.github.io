@@ -95,8 +95,10 @@ export default function AboutMe() {
   style={{
     flex: 1,
     minWidth: "280px",
-    maxWidth: "320px", // Smaller than before
+    maxWidth: "320px",
     textAlign: "center",
+    alignSelf: "flex-start", // Align the image with the top of the text
+    marginTop: "0.25rem",    // Optional: fine-tune to align exactly with heading
   }}
 >
   <Image
@@ -110,6 +112,7 @@ export default function AboutMe() {
       width: "100%",
       height: "auto",
       boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+      marginTop: "0", // prevent any unwanted offset
     }}
   />
 </div>
