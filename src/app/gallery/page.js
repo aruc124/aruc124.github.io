@@ -34,6 +34,7 @@ export default function Gallery() {
     fontSize: "2.5rem",
     marginTop: "6rem", // 👈 Add this line
     marginBottom: "4rem",
+    textAlign: "left",
     color: "#fff",
   }}
 >
