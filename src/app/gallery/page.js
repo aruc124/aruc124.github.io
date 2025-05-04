@@ -33,7 +33,7 @@ export default function Gallery() {
   style={{
     fontSize: "2.5rem",
     marginTop: "6rem", // 👈 Add this line
-    marginBottom: "4rem",
+    marginBottom: "2rem",
     textAlign: "left",
     color: "#fff",
   }}
