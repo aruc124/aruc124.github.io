@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Gallery() {
   const images = [
-    "/gallery1.jpeg",
-    "/gallery2.jpg",
+    "/gallery1.jpg",
+    "/gallery2.jpeg",
     "/gallery3.jpg",
     "/gallery4.jpg",
     "/gallery5.jpg",
