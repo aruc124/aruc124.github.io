@@ -94,7 +94,7 @@ export default function AboutMe() {
             textAlign: "center",
           }}
         >
-          <Image
+          <img
             src="/flute.jpg"
             alt="Arushi dancing"
             width={500}
