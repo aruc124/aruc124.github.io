@@ -28,17 +28,7 @@ export default function Gallery() {
   }, []);
 
   return (
-    <main
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "6rem 2rem 4rem",
-        minHeight: "100vh",
-        background: "linear-gradient(to right, #0a0a0a, #111111)",
-        color: "#a5a552",
-      }}
-    >
+    <main style={{ padding: "5rem 2rem", maxWidth: "1000px", margin: "0 auto" }}>
       <h1
   style={{
     fontSize: "2.5rem",
