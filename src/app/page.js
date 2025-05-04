@@ -36,7 +36,7 @@ export default function AboutMe() {
               fontSize: "2.5rem",
               fontWeight: 800,
               marginBottom: "1.5rem",
-              marginTop: "3rem",
+              marginTop: "4rem",
               color: "#808000",
               fontFamily: "var(--font-sora), sans-serif",
               textAlign: "left",
@@ -99,7 +99,7 @@ export default function AboutMe() {
     maxWidth: "400px",
     textAlign: "center",
     alignSelf: "flex-start", // Align the image with the top of the text
-    marginTop: "7rem",    // Optional: fine-tune to align exactly with heading
+    marginTop: "6rem",    // Optional: fine-tune to align exactly with heading
   }}
 >
   <Image
