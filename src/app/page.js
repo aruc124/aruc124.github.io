@@ -36,6 +36,7 @@ export default function AboutMe() {
               fontSize: "2.5rem",
               fontWeight: 800,
               marginBottom: "1.5rem",
+              marginTop: "3rem"
               color: "#808000",
               fontFamily: "var(--font-sora), sans-serif",
               textAlign: "left",
