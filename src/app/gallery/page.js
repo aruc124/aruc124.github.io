@@ -19,10 +19,12 @@ export default function Gallery() {
   const goPrev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   useEffect(() => {
+    // ✅ Define keyboard event handler correctly
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") goNext();
       if (e.key === "ArrowLeft") goPrev();
     };
+
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
@@ -41,7 +43,7 @@ export default function Gallery() {
       <h1
         style={{
           fontSize: "2.5rem",
-          marginTop: "6rem",  // same as in Projects
+          marginTop: "6rem", // matches Projects page
           marginBottom: "4rem",
           color: "#ffffff",
           fontFamily: "var(--font-sora), sans-serif",
@@ -78,7 +80,7 @@ export default function Gallery() {
           &#8592;
         </button>
 
-        {/* Image */}
+        {/* Main Image */}
         <div
           style={{
             flex: 1,
@@ -87,7 +89,7 @@ export default function Gallery() {
             overflow: "hidden",
             boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
             width: "100%",
-            maxHeight: "70vh", // slightly smaller
+            maxHeight: "70vh",
           }}
         >
           <Image
@@ -124,7 +126,7 @@ export default function Gallery() {
         </button>
       </div>
 
-      {/* Thumbnails */}
+      {/* Thumbnail Bar */}
       <div
         style={{
           display: "flex",
