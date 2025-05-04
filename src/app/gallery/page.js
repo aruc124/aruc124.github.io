@@ -40,18 +40,15 @@ export default function Gallery() {
       }}
     >
       <h1
-        style={{
-          fontSize: "2.5rem",
-    marginTop: "6rem", // match Projects
-    marginBottom: "4rem", // match Projects
-    fontFamily: "var(--font-sora), sans-serif",
-    color: "#ffffff",
-    alignSelf: "flex-start",
-    paddingLeft: "2rem",
-        }}
-      >
-        Gallery
-      </h1>
+  style={{
+    fontSize: "2.5rem",
+    marginTop: "6rem", // 👈 Add this line
+    marginBottom: "4rem",
+    color: "#fff",
+  }}
+>
+  Gallery
+</h1>
 
       <div
         style={{
