@@ -19,12 +19,10 @@ export default function Gallery() {
   const goPrev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   useEffect(() => {
-    // ✅ Define keyboard event handler correctly
-    const handleKey =(e) => {
+    const handleKey = (e) => {
       if (e.key === "ArrowRight") goNext();
       if (e.key === "ArrowLeft") goPrev();
     };
-
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
@@ -32,9 +30,10 @@ export default function Gallery() {
   return (
     <main
       style={{
-        padding: "5rem 2rem",
-        maxWidth: "1000px",
-        margin: "0 auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "6rem 2rem 4rem",
         minHeight: "100vh",
         background: "linear-gradient(to right, #0a0a0a, #111111)",
         color: "#a5a552",
@@ -43,10 +42,12 @@ export default function Gallery() {
       <h1
         style={{
           fontSize: "2.5rem",
-          marginTop: "6rem", // matches Projects page
-          marginBottom: "4rem",
-          color: "#ffffff",
-          fontFamily: "var(--font-sora), sans-serif",
+    marginTop: "6rem", // match Projects
+    marginBottom: "4rem", // match Projects
+    fontFamily: "var(--font-sora), sans-serif",
+    color: "#ffffff",
+    alignSelf: "flex-start",
+    paddingLeft: "2rem",
         }}
       >
         Gallery
@@ -80,7 +81,7 @@ export default function Gallery() {
           &#8592;
         </button>
 
-        {/* Main Image */}
+        {/* Image */}
         <div
           style={{
             flex: 1,
@@ -89,14 +90,14 @@ export default function Gallery() {
             overflow: "hidden",
             boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
             width: "100%",
-            maxHeight: "70vh",
+            maxHeight: "80vh",
           }}
         >
           <Image
             src={images[current]}
             alt={`Gallery image ${current + 1}`}
-            width={720}
-            height={480}
+            width={700}
+            height={500}
             style={{
               width: "100%",
               height: "auto",
@@ -126,7 +127,7 @@ export default function Gallery() {
         </button>
       </div>
 
-      {/* Thumbnail Bar */}
+      {/* Thumbnail Bar - centered */}
       <div
         style={{
           display: "flex",
@@ -149,8 +150,8 @@ export default function Gallery() {
               key={i}
               src={src}
               alt={`Thumbnail ${i + 1}`}
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               onClick={() => setCurrent(i)}
               style={{
                 cursor: "pointer",
