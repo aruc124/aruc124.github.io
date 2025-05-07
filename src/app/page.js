@@ -62,7 +62,7 @@ export default function AboutMe() {
             <br />
             <br />
             Her own artistic work explores the intersection of classical tradition and
-            contemporary expression. Arushi creates innovative contemporary pieces that
+            contemporary expression. Arushi creates innovative pieces that
             weave together intercultural themes while blending mediums such as movement,
             speech, and visual storytelling. She is especially passionate about using dance
             as a powerful way to bridge cultures, connect communities, and share stories
