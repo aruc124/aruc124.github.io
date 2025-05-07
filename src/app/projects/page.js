@@ -12,7 +12,7 @@ export default function Projects() {
     {
       title: "Pujarini – An Adaption",
       description:
-        "An innovative solo choreography set to the Bengali poem Pujarini (“The Devotee”) by Rabindranath Tagore. Presented in 2022 in Wettingen, Switzerland, this performance blended Bharatanatyam, spoken word, and poetry.",
+        "An innovative solo choreography set to the Bengali poem Pujarini (“The Devotee”) by Rabindranath Tagore. Presented in 2022 in Wettingen, Switzerland, this performance blended Bharatanatyam, spoken word, and poetry. At the center is the story a young woman from a marginalized social class who seeks a deep, personal spiritual connection while challenging existing social boundaries and institutional norms.",
       image: "/project1.jpg",
       youtube: "https://youtu.be/NfFsM-i7S58",
     },
